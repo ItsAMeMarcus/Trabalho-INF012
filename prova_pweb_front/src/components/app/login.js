@@ -16,7 +16,7 @@ export default function Login() {
         <div className='formulario'>
             <h1>Entrar</h1>
             <input type='text' placeholder='email@example.com' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
-            <input type='text' placeholder='******' value={senha} onChange={(e)=>{setSenha(e.target.value)}}/>
+            <input type='password' placeholder='******' value={senha} onChange={(e)=>{setSenha(e.target.value)}}/>
             <button >Acessar</button>
             <p>Ainda não tem uma conta? <a href="http://localhost:3000/cadastro">Crie aqui</a></p>
         </div>
