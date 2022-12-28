@@ -1,5 +1,6 @@
 import React from 'react'
-import Login from '../../components/app/login'
+import Login from '../../components/app/LoginCadastro/login'
+
 
 export default function Home() {
   return (

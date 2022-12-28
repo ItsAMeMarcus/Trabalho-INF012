@@ -1,0 +1,59 @@
+body{
+    background-color: #b6b6b6;
+}
+
+.main{
+    margin-left: 200px;
+    padding: 0px 10px;
+}
+
+.menuLateral{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top:0;
+    left:0;
+    background-color: rgb(22, 66, 122);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.li{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    flex-direction: row;
+    color: #ffffff;
+    transition: 0.2s ease-in-out;
+}
+
+.li img{
+    padding-right: 10px;    
+}
+
+.li:hover{
+    background-color: rgb(34, 89, 161)
+}
+
+.casa,.clientes,.configuracoes{
+    width: 20px;
+}
+
+.imagemPerfil{
+    background-color: burlywood;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.imagemPerfil img{
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+}

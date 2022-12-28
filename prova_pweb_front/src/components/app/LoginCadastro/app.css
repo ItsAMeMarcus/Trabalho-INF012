@@ -28,13 +28,12 @@ input{
     border-right: none;
     border-bottom:2px solid rgb(2, 120, 167);
     background-color: rgb(194, 223, 250);
-    transition: width 0.4s ease-in-out;
+    transition: border-bottom 0.2s ease-in-out;
 }
 
 input:focus{
     outline: none !important;
     border-bottom:2px solid rgb(0, 183, 255);
-    width: 300px;
 }
 
 .centro{
@@ -50,6 +49,7 @@ input:focus{
     flex-direction: column;
     background-color: rgb(214, 242, 255);
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .formulario{
@@ -65,6 +65,7 @@ input:focus{
     height: 550px;
     width: 900px; 
     background-color: rgb(25, 4, 99);
+    border-radius: 10px;
 }
 
 .icone{

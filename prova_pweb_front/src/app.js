@@ -2,8 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Cadastro from './Pages/Cadastro'
 import Home from './Pages/Home/'
-import './components/app/app.css'
-import Perfil from './Pages/Perfil'
+import AreaUsuario from './Pages/AreaUsuario'
 
 
 export default function App() {
@@ -12,7 +11,7 @@ export default function App() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/perfil" element={<Perfil />} />
+            <Route path="/chamados" element={<AreaUsuario />} />
         </Routes>
     </Router>
   )

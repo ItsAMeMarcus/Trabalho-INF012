@@ -1,21 +1,25 @@
 import React, { useState } from 'react'
-import user from '../../assets/user.png'
+import user from '../../../assets/user.png'
 import {createUserWithEmailAndPassword} from "firebase/auth";
-import auth from '../../fireBaseConnection';
-import { Link, redirect } from 'react-router-dom';
-import Home from '../../Pages/Home';
+import auth from '../../../fireBaseConnection';
+import { Link, redirect, useNavigate } from 'react-router-dom';
+import Home from '../../../Pages/Home';
+import './app.css'
 
 export default function NovaConta() {
 
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
+    const navigate = useNavigate()
 
     async function novoUsuario(){
+      //mandar essas informações do usuário com o nome pro back e salvar no banco
       await createUserWithEmailAndPassword(auth, email, senha).then((value)=>{
         console.log(value)
         console.log(value.user)
-        
+        alert("Conta Criada com Sucesso")
+        navigate("/")
       }).catch((error)=>{
         console.log(error)
         if(error.code==='auth/weak-password'){
@@ -37,7 +41,7 @@ export default function NovaConta() {
             <input type='text' placeholder='Seu Nome' value={nome} onChange={(e)=>{setNome(e.target.value)}}/>
             <input type='text' placeholder='email@example.com' value={email} onChange={(e)=>{setEmail(e.target.value)}}/>
             <input type='text' placeholder='******' value={senha} onChange={(e)=>{setSenha(e.target.value)}}/>
-            <button onClick={()=>{novoUsuario()}}>Acessar</button>
+            <button onClick={()=>{novoUsuario()}}>Criar Conta</button>
             <p>Já tem uma conta? <a href="http://localhost:3000">Clique aqui</a></p>
         </div>
     </div>
