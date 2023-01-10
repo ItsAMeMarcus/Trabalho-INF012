@@ -5,6 +5,7 @@ import auth from '../../../fireBaseConnection';
 import { Link, redirect, useNavigate } from 'react-router-dom';
 import Home from '../../../Pages/Home';
 import './app.css'
+import axios from 'axios';
 
 export default function NovaConta() {
 
@@ -12,14 +13,21 @@ export default function NovaConta() {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const navigate = useNavigate()
+    const urlBack = "http://localhost:8080"
 
     async function novoUsuario(){
       //mandar essas informações do usuário com o nome pro back e salvar no banco
       await createUserWithEmailAndPassword(auth, email, senha).then((value)=>{
-        console.log(value)
+        let senha = value.user.uid
+        axios.post(urlBack + "/usuarios", {nome, email, senha}).then(res=>{
+          console.log(res)
+          console.log(res.data)
+        }).catch((e)=>console.log(e.message))
+
         console.log(value.user)
         alert("Conta Criada com Sucesso")
         navigate("/")
+
       }).catch((error)=>{
         console.log(error)
         if(error.code==='auth/weak-password'){

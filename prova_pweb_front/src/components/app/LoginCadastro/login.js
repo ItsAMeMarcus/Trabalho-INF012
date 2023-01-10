@@ -18,11 +18,12 @@ export default function Login() {
       onAuthStateChanged(auth,(user)=>{
         if(user){
           setUser(true)
+          console.log(user.email)
           setLogedUser({
             uid:user.uid,
             email:user.email
           })
-          navigate("/chamados")
+          navigate("/configuracoes")
         }
         else{
           setUser(false)
@@ -39,6 +40,7 @@ export default function Login() {
         console.log(value)
         alert(value)
       }).catch((error)=>{
+        alert("Login/Senha incorretos")
         console.log(error)
       })
     }

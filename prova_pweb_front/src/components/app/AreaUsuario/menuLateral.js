@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import casaIcon from '../../../assets/casaIcon.png'
 import clientesIcon from '../../../assets/clientesIcon.png'
 import configuracaoIcon from '../../../assets/configuracaoIcon.png'
-import './menu.css'
+// import './menu.css'
 
 export default function MenuLateral() {
 

@@ -1,12 +1,12 @@
 import React from 'react'
+import MeuClientes from '../../components/app/AreaClientes/clientes'
 import MenuLateral from '../../components/app/AreaUsuario/menuLateral'
-import MeuPerfil from '../../components/app/AreaUsuario/perfil'
 
-export default function AreaUsuario() {
+export default function AreaClientes() {
   return (
     <div className='main'>
         <MenuLateral />
-        <MeuPerfil url="http://localhost:8080" />
+        <MeuClientes url="http://localhost:8080" />
     </div>
   )
 }
